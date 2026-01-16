@@ -91,7 +91,7 @@ After the instrumentation and compilation are completed, a directory called ```s
 $ echo core >/proc/sys/kernel/core_pattern
 $ /home/ubuntu/CFPOfuzz/AFL-cfpo/afl-fuzz -c 1 -r ./stackaspect -i in -o out-cfpo ./test
 ```
-The``` -c ```parameter is followed by different configuration modes, which is an integer between 1 and 7(***1: CFPO*+IP; 2: CFPO*+IP+COV; 3: CFPO*; 4: CFPO*+COV; 5: COV+IP; 6: CFPO+IP; 7: CFPO***)，The value 1 indicates the use of the target method proposed in this paper. When the "unique bugs" counter in the graphical interface transitions from 0 to 1, it signifies the detection of the target bug. At this juncture, the fuzzing process can be terminated by pressing the CTRL+C key combination.
+The``` -c ```parameter is followed by different configuration modes, which is an integer between 1 and 7(***1: CFPO\*+IP; 2: CFPO\*+IP+COV; 3: CFPO\*; 4: CFPO\*+COV; 5: COV+IP; 6: CFPO+IP; 7: CFPO***)，The value 1 indicates the use of the target method proposed in this paper. When the "unique bugs" counter in the graphical interface transitions from 0 to 1, it signifies the detection of the target bug. At this juncture, the fuzzing process can be terminated by pressing the CTRL+C key combination.
 
 For property matching, distance calculation, and other related information, we use*** shared memory***  for communication. Determining ***whether the defined receiving state*** has been reached is done solely through the information in shared memory. Therefore, in coverage-guided fuzzing, the information in the stackaspect directory is not needed. The fuzzing command is as follows:
 ```
@@ -100,7 +100,7 @@ $ /home/ubuntu/CFPOfuzz/AFL-cfpo/afl-fuzz  -i in -o out-cov ./test
 
 The initial input is stored in``` /home/ubuntu/demo/in/input```, and its content is ```"hhhhhh"```.You will observe that our method will identify the ```target input``` that triggers the bug  within ```1 minute```, and it will be saved in ```/home/ubuntu/demo/out-cfpo/RVC```. In contrast, coverage-guided fuzzing is unlikely to discover the target input within``` 10 minutes```.
 ## Reproducing experimental results
-In our experiments, there are a total of 17 tasks. Among them, 10 tasks (from the `CFPOfuzz-Benchmark`) were evaluated under eight configurations (CFPO*+IP, CFPO+IP, CFPO*, CFPO, COV, COV+IP, COV+CFPO*, COV+IP+CFPO*). Our target approach is CFPO*+IP. Since it requires running 80 tasks in parallel, we provide scripts to automate and execute all experiments. The remaining 7 tasks(from the `New-bug`) involve previously unknown zero-day bugs discovered in real-world programs, which you can reproduce individually using our method as described in this section.
+In our experiments, there are a total of 17 tasks. Among them, 10 tasks (from the `CFPOfuzz-Benchmark`) were evaluated under eight configurations (CFPO\*+IP, CFPO+IP, CFPO\*, CFPO, COV, COV+IP, COV+CFPO\*, COV+IP+CFPO\*). Our target approach is CFPO*+IP. Since it requires running 80 tasks in parallel, we provide scripts to automate and execute all experiments. The remaining 7 tasks(from the `New-bug`) involve previously unknown zero-day bugs discovered in real-world programs, which you can reproduce individually using our method as described in this section.
 
 Given the long runtime of the evaluation and the large number of parallel tasks, all of our experiments were conducted on a server with 128 CPU cores and 256GB of memory.
 
