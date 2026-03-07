@@ -27,7 +27,7 @@ If all goes well, the container should be running successfully. Otherwise, you c
 Now, navigate into the directory containing our experimental environment and list the contents. 
 ```sh
 $ cd /home/ubuntu/ && ls
-CFPOfuzz /  CFPOfuzz-Benchmark / Fuzzdata / LLVM / Newbug / demo /
+CFPOfuzz /  CFPOfuzz-Benchmark / Fuzz-data / LLVM / NewBug / demo /
 
 $ cd /home/ubuntu/CFPOfuzz && ls
 AFL-cfpo /  antlr  /  ccmop  /  rv-monitor /  wcompiler / AFLnet-cfpo / aspectc / examples / wac-pass
@@ -35,10 +35,10 @@ AFL-cfpo /  antlr  /  ccmop  /  rv-monitor /  wcompiler / AFLnet-cfpo / aspectc 
 $ cd /home/ubuntu/CFPOfuzz-Benchmark && ls
 Exiv2 / Mujs / OpenSSL / TinyDTLS / lua  / run.py
 
-$ cd /home/ubuntu/Fuzzdata && ls
+$ cd /home/ubuntu/Fuzz-data && ls
 Data_collection.py / data / gen_result.sh / table_processor.py / get_tablefig_latex.py
 
-$ cd /home/ubuntu/Newbug && ls
+$ cd /home/ubuntu/NewBug && ls
 Live555-0.92-LV3 / Newcrash_input   /    luna-0.1.1-LN1 / luna-0.1.1-LN3
 Live555-0.92-LV4 / TinyDTLS-0.9rcl-TD4 / luna-0.1.1-LN2 / mujs-1.0.9-MJ5
 ```
